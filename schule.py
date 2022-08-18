@@ -1,4 +1,5 @@
 import math
+import sympy
 
 print((3+7) / 2)
 print(pow(2,1000))
@@ -9,7 +10,6 @@ pow_a = pow(2,3)
 pow_b = pow(pow_a, 2)
 print(pow_b)
 print(pow(pow(2,3),2))
-
 
 print(math.sqrt(49))
 
@@ -30,16 +30,16 @@ my_var *= my_var
 
 print(my_var)
 
+def primzahl_berechnung(number):
+    primzahlen = []
 
-myVar = 0
-primzahlen = []
+    for item in range(number + 1):
+        calc = pow(2, pow(2, item)) + 1
+        if sympy.isprime(calc):
+            primzahlen.append(item)
+        else:
+            print(item, " ergibt keine Primzahl in der Berechnung")
 
-while myVar <= 20:
-    calc = pow(2, pow(2, myVar)) + 1
-    if calc % calc == 0:
-        primzahlen.append(myVar)
-    else:
-        print(calc + " ergibt keine Primzahl in der Berechnung")
-    myVar += 1
+    print(primzahlen)
 
-print(primzahlen)
+primzahl_berechnung(10)
